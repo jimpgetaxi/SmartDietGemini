@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Diet</string>
+    <string name="welcome_message">Καλώς ήρθες!</string>
+    <string name="add_meal">Προσθήκη Γεύματος</string>
+    <string name="history">Ιστορικό</string>
+    <string name="calories">Θερμίδες</string>
+    <string name="protein">Πρωτεΐνη</string>
+    <string name="carbs">Υδατάνθρακες</string>
+    <string name="fat">Λιπαρά</string>
+    <string name="analyze_food">Ανάλυση</string>
+    <string name="describe_meal">Τι έφαγες σήμερα;</string>
+    <string name="describe_meal_hint">π.χ. Μια μπριζόλα με ρύζι και σαλάτα...</string>
+    <string name="loading">Φόρτωση...</string>
+    <string name="error_analysis">Σφάλμα κατά την ανάλυση. Προσπάθησε ξανά.</string>
+</resources>
