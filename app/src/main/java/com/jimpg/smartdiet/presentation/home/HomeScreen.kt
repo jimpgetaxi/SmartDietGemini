@@ -54,11 +54,14 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.clip
 
+import androidx.compose.material.icons.filled.Timer
+
 @Composable
 fun HomeScreen(
     application: SmartDietApp,
     onAddMealClick: () -> Unit,
-    onProfileClick: () -> Unit
+    onProfileClick: () -> Unit,
+    onFastingClick: () -> Unit
 ) {
     val repository = MealRepositoryImpl(
         application.database.mealDao(),
@@ -107,17 +110,30 @@ fun HomeScreen(
                         modifier = Modifier.align(Alignment.CenterStart)
                     )
                     
-                    IconButton(
-                        onClick = onProfileClick,
-                        modifier = Modifier
-                            .align(Alignment.CenterEnd)
-                            .background(Color.White.copy(alpha = 0.5f), shape = MaterialTheme.shapes.small)
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Person,
-                            contentDescription = "Profile",
-                            tint = Color.DarkGray
-                        )
+                    Row(modifier = Modifier.align(Alignment.CenterEnd)) {
+                        IconButton(
+                            onClick = onFastingClick,
+                            modifier = Modifier.background(Color.White.copy(alpha = 0.5f), shape = MaterialTheme.shapes.small)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Timer,
+                                contentDescription = "Fasting",
+                                tint = Color.DarkGray
+                            )
+                        }
+                        
+                        Spacer(modifier = Modifier.width(8.dp))
+                        
+                        IconButton(
+                            onClick = onProfileClick,
+                            modifier = Modifier.background(Color.White.copy(alpha = 0.5f), shape = MaterialTheme.shapes.small)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Person,
+                                contentDescription = "Profile",
+                                tint = Color.DarkGray
+                            )
+                        }
                     }
                 }
                 

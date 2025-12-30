@@ -14,6 +14,7 @@ import com.jimpg.smartdiet.SmartDietApp
 import com.jimpg.smartdiet.presentation.home.HomeScreen
 import com.jimpg.smartdiet.presentation.addmeal.AddMealScreen
 import com.jimpg.smartdiet.presentation.profile.ProfileScreen
+import com.jimpg.smartdiet.presentation.fasting.FastingScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +34,9 @@ class MainActivity : ComponentActivity() {
                             },
                             onProfileClick = {
                                 navController.navigate("profile")
+                            },
+                            onFastingClick = {
+                                navController.navigate("fasting")
                             }
                         )
                     }
@@ -46,6 +50,14 @@ class MainActivity : ComponentActivity() {
                     }
                     composable("profile") {
                         ProfileScreen(
+                            application = app,
+                            onNavigateBack = {
+                                navController.popBackStack()
+                            }
+                        )
+                    }
+                    composable("fasting") {
+                        FastingScreen(
                             application = app,
                             onNavigateBack = {
                                 navController.popBackStack()
